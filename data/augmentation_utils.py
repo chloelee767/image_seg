@@ -1,4 +1,6 @@
-def make_train_list(lst):
+from ..preproc.augmentation import num_aug, num_tta
+
+def make_train_list(lst,num_aug = num_aug):
     train_list = lst.copy()
     n = len(train_list)
     for i in range(n):
@@ -6,7 +8,7 @@ def make_train_list(lst):
             train_list.append(f'{train_list[i]}_aug{j}')
     return train_list
 
-def make_test_list(lst):
+def make_test_list(lst,num_tta=num_tta):
     test_list = lst.copy()
     n = len(test_list)
     for i in range(n):

@@ -23,7 +23,8 @@ tta = [
 num_tta = len(tta)
 
 import imageio
-from ..configs.default import *
+from ...configs.default import *
+
 def run_training_aug(full_train_list):
     for filename in full_train_list:
         img = imageio.imread(IMGDIR/f'{filename}.jpg')

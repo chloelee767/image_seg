@@ -1,5 +1,5 @@
 import json
-from ..config.default import COMMONDIR
+from ..configs.default import COMMONDIR
 
 def get_full_train_list():
     with open(COMMONDIR/'train_list.json') as f:
@@ -21,7 +21,7 @@ def get_filename_mapping():
         filename_map = json.load(f)
     return filename_map
 
-def get_full_train_patients(full_train_list=None,filename_map=None)
+def get_full_train_patients(full_train_list=None,filename_map=None):
     if not full_train_list:
         full_train_list = get_full_train_list()
     if not filename_map:

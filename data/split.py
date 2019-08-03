@@ -16,7 +16,7 @@ def open_split(name,folder=CONFIGDIR):
         filedict = json.load(f)
     return filedict['split'] , filedict['val_patients']
 
-def create_split(n_splits=5,name,folder=CONFIGDIR):
+def create_split(name,n_splits=5,folder=CONFIGDIR):
     from random import sample, shuffle
 
     full_train_list = get_full_train_list()

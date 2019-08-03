@@ -2,6 +2,7 @@ import os
 import shutil
 import subprocess
 import shlex
+from pathlib import Path
 
 def run_command(args,**kwargs):
     cp = subprocess.run(args,stdout = subprocess.PIPE,stderr= subprocess.STDOUT,universal_newlines=True,**kwargs)
@@ -16,8 +17,8 @@ class GitRepo:
             self.repo_folder = str(repo_folder)
         else:
             self.repo_folder = os.getcwd() + '/' + self.repo_name
-            
-        print(f'{self.repo_username}/{self.repo_name} folder:',self.repo_folder)
+       
+        print(self.ssh_url,':',self.repo_folder)
         
         Path('/root/.ssh/').mkdir(parents=True,exist_ok=True)
         Path('/root/.ssh/known_hosts').touch(exist_ok=True)
